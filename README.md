@@ -25,6 +25,7 @@ programming. I have tried both [gas](https://en.wikibooks.org/wiki/X86_Assembly/
 * digging into binary opcode format to understand things at a lower level
 * maybe learn to use the stack pointer to look upwards in the stack
 * learn writing asm for the Arduino
+* connect what I learned in nasm back in gas syntax
 * write into a string buffer (done)
 * reverse the string (done)
 * figure out how to use debugger
