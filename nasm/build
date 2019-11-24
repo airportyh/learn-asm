@@ -1,0 +1,14 @@
+nasm -f macho64 hello.asm
+ld -macosx_version_min 10.7.0 -lSystem -o hello hello.o
+
+nasm -f macho64 sum.asm
+ld -macosx_version_min 10.7.0 -lSystem -o sum sum.o
+
+nasm -f macho64 play.asm
+ld -macosx_version_min 10.7.0 -lSystem -o play play.o
+
+nasm -f macho64 part1.asm
+ld -macosx_version_min 10.7.0 -lSystem -o part1 part1.o
+
+# nasm -f macho64 printf1.asm
+# ld -macosx_version_min 10.7.0 -lSystem -o printf1 printf1.o

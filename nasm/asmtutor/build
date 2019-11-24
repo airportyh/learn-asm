@@ -1,0 +1,2 @@
+nasm -f elf $1
+ld -m elf_i386 ${1%.asm}.o -o ${1%.asm}.bin
