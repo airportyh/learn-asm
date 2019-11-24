@@ -1,7 +1,7 @@
 %include 'helpers.asm'
 
 SECTION .bss
-atoi_buffer: resb 255
+itoa_buffer: resb 255
 
 SECTION .text
 global _start
