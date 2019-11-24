@@ -16,10 +16,15 @@ programming. I have tried both [gas](https://en.wikibooks.org/wiki/X86_Assembly/
 ## Todos
 
 * extract a set of useful library functions: (atoi, itoa, reverse_string)
+* guess a number game
 * write some slightly more complex programs
+* word count (wc) program
 * use malloc to simulate arrays, strings, and structs
+* word summary program
 * learn to use lea
+* digging into binary opcode format to understand things at a lower level
 * maybe learn to use the stack pointer to look upwards in the stack
+* learn writing asm for the Arduino
 * write into a string buffer (done)
 * reverse the string (done)
 * figure out how to use debugger
