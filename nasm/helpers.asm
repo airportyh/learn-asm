@@ -27,3 +27,9 @@ itoa:
     mov edx, 255
     sub edx, esi
     ret
+
+exit:
+    mov eax, 1
+    mov ebx, 0
+    int 80h
+    ret
