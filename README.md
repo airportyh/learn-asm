@@ -16,6 +16,7 @@ programming. I have tried both [gas](https://en.wikibooks.org/wiki/X86_Assembly/
 ## Todos
 
 * learn how to do these in 64-bit osx so I don't have to use Docker
+* figure out how to use debugger
 * write some slightly more complex programs
 * use malloc to simulate arrays, strings, and structs
 * learn to use lea
@@ -26,7 +27,6 @@ programming. I have tried both [gas](https://en.wikibooks.org/wiki/X86_Assembly/
 * extract a set of useful library functions: (atoi(x), itoa(x), reverse_string)
 * write into a string buffer (done)
 * reverse the string (done)
-* figure out how to use debugger
 * print a number w/o printf - (done)
 * convert a string number into a number (done)
 
@@ -35,8 +35,10 @@ programming. I have tried both [gas](https://en.wikibooks.org/wiki/X86_Assembly/
 * word count (wc) program
 * guess a number game
 * reverse guess a number game
+* possible to have the guess a number game vs a reverse guess a number game?
 * word summary program
 * calculator / tally program
+* fizzbuzz
 
 ## Videos
 
