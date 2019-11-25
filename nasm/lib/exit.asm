@@ -1,3 +1,4 @@
+; gracefully exits the program
 exit:
     mov eax, 1
     mov ebx, 0

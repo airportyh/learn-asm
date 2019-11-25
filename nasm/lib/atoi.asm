@@ -1,4 +1,8 @@
-; atoi(esi) -> eax
+; atoi
+; inputs:
+;	esi - the address of the string buffer which contains the digits
+; outputs:
+;	eax - the resulting integer
 ; locals: ecx, ebx, edx
 atoi:
 	push ecx

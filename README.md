@@ -15,7 +15,6 @@ programming. I have tried both [gas](https://en.wikibooks.org/wiki/X86_Assembly/
 
 ## Todos
 
-* extract a set of useful library functions: (atoi, itoa(x), reverse_string)
 * learn how to do these in 64-bit osx so I don't have to use Docker
 * write some slightly more complex programs
 * use malloc to simulate arrays, strings, and structs
@@ -24,6 +23,7 @@ programming. I have tried both [gas](https://en.wikibooks.org/wiki/X86_Assembly/
 * maybe learn to use the stack pointer to look upwards in the stack
 * learn writing asm for the Arduino
 * connect what I learned in nasm back in gas syntax
+* extract a set of useful library functions: (atoi(x), itoa(x), reverse_string)
 * write into a string buffer (done)
 * reverse the string (done)
 * figure out how to use debugger
