@@ -15,12 +15,10 @@ programming. I have tried both [gas](https://en.wikibooks.org/wiki/X86_Assembly/
 
 ## Todos
 
-* extract a set of useful library functions: (atoi, itoa, reverse_string)
-* guess a number game
+* extract a set of useful library functions: (atoi, itoa(x), reverse_string)
+* learn how to do these in 64-bit osx so I don't have to use Docker
 * write some slightly more complex programs
-* word count (wc) program
 * use malloc to simulate arrays, strings, and structs
-* word summary program
 * learn to use lea
 * digging into binary opcode format to understand things at a lower level
 * maybe learn to use the stack pointer to look upwards in the stack
@@ -31,6 +29,14 @@ programming. I have tried both [gas](https://en.wikibooks.org/wiki/X86_Assembly/
 * figure out how to use debugger
 * print a number w/o printf - (done)
 * convert a string number into a number (done)
+
+## Ideas for Programs
+
+* word count (wc) program
+* guess a number game
+* reverse guess a number game
+* word summary program
+* calculator / tally program
 
 ## Videos
 

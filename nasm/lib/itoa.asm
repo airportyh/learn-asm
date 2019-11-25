@@ -1,6 +1,9 @@
-; itoa(eax) -> ecx, edx ready to call sys_write
+; itoa(eax, ebx) -> ecx, edx ready to call sys_write
 ; requires itoa_buffer: resb 255 to be declared in .bss section
 itoa:
+	push esi
+	push edi
+
     ; strategy - we are going to fill in the digits from
     ; the end of the buffer and then move backwards
 	mov esi, 254
@@ -17,19 +20,16 @@ itoa:
 	; representation of the digit (48 is the ascii code for the
 	; character '0')
 	add edx, 48
-	mov [itoa_buffer + esi], dl
+	mov [ebx + esi], dl
 
     dec esi
 	; if quotient is not zero, go to top of loop and do it again
     cmp eax, 0
 	jne .divide_loop
-    lea ecx, [itoa_buffer + esi]
+    lea ecx, [ebx + esi]
     mov edx, 255
     sub edx, esi
-    ret
 
-exit:
-    mov eax, 1
-    mov ebx, 0
-    int 80h
+	pop edi
+	pop esi
     ret

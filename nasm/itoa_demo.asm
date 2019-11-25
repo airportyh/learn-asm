@@ -1,15 +1,16 @@
-%include 'helpers.asm'
+%include './lib/itoa.asm'
+%include './lib/exit.asm'
+%include './lib/print.asm'
 
 SECTION .bss
 itoa_buffer: resb 255
+atoi_buffer: resb 255
 
 SECTION .text
 global _start
 _start:
-    mov eax, 927482
+    mov eax, 1234567
+    mov ebx, itoa_buffer
     call itoa
-    mov eax, 4
-    mov ebx, 1
-    int 80h
-
+    call print
     call exit
