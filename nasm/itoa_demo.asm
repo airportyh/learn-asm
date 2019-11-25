@@ -9,7 +9,7 @@ atoi_buffer: resb 255
 SECTION .text
 global _start
 _start:
-    mov eax, 1234567
+    mov eax, -234
     mov ebx, itoa_buffer
     call itoa
     call print

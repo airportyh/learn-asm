@@ -15,9 +15,9 @@ programming. I have tried both [gas](https://en.wikibooks.org/wiki/X86_Assembly/
 
 ## Todos
 
+* write some slightly more complex programs
 * learn how to do these in 64-bit osx so I don't have to use Docker
 * figure out how to use debugger
-* write some slightly more complex programs
 * use malloc to simulate arrays, strings, and structs
 * learn to use lea
 * digging into binary opcode format to understand things at a lower level
@@ -32,12 +32,12 @@ programming. I have tried both [gas](https://en.wikibooks.org/wiki/X86_Assembly/
 
 ## Ideas for Programs
 
+* calculator / tally program
+* reverse guess a number game
 * word count (wc) program
 * guess a number game
-* reverse guess a number game
 * possible to have the guess a number game vs a reverse guess a number game?
 * word summary program
-* calculator / tally program
 * fizzbuzz
 
 ## Videos

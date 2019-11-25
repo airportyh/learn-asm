@@ -5,7 +5,13 @@
 ; outputs:
 ;   none
 print:
+    push eax
+    push edx
+    
     mov eax, 4
 	mov ebx, 1
 	int 80h
+
+    pop edx
+    pop eax
     ret

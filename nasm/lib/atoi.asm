@@ -8,9 +8,22 @@ atoi:
 	push ecx
 	push ebx
 	push edx
+	; check for - sign
+	cmp byte [esi], 45
+	je .negative
+	jmp .positive
+
+.negative:
+	push -1
+	mov ecx, 1
+	jmp .begin
+.positive:
+	push 1
 	; initializing ecx which is used as the loop counter as well as
 	; the index into the esi
 	mov ecx, 0
+
+.begin:
 	; eax will contain the number we are accumulating to base on
 	; the digits entered by the user
 	mov eax, 0
@@ -45,6 +58,10 @@ atoi:
 	jmp .accumulate_loop
 
 .accumulate_loop_end:
+
+	mov edx, 0
+	pop ebx
+	imul ebx
 
 	pop edx
     pop ebx

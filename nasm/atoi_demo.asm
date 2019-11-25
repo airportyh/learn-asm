@@ -7,6 +7,8 @@
 
 SECTION .data
 ask_number db 'Enter a number: '
+negative_message db 'That is negative: '
+positive_message db 'That is positive: '
 
 SECTION .bss
 atoi_buffer: resb 255
@@ -16,7 +18,7 @@ SECTION .text
 global _start
 _start:
 	mov ecx, ask_number
-	mov edx, 17
+	mov edx, 16
 	call print
 
 	mov ecx, atoi_buffer
@@ -25,10 +27,11 @@ _start:
 
     mov esi, atoi_buffer
     call atoi
+
     mov ebx, itoa_buffer
     call itoa
     call print
-    
+
     ; print a newline
     mov esi, 10
     call print_char

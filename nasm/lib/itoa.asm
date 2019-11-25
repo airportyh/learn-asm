@@ -9,7 +9,19 @@
 itoa:
 	push esi
 	push edi
+	cmp eax, 0
+	jl .negative
+	jmp .positive
+.negative:
+	mov edx, 0
+	mov esi, -1
+	imul esi
+	push -1
+	jmp .begin
+.positive:
+	push 1
 
+.begin:
     ; strategy - we are going to fill in the digits from
     ; the end of the buffer and then move backwards
 	mov esi, 254
@@ -36,6 +48,17 @@ itoa:
     mov edx, 255
     sub edx, esi
 
+	pop edi ; check for negative sign
+	cmp edi, -1
+	je .apply_negative_sign
+	jmp .done
+
+.apply_negative_sign:
+	mov dl, 45
+	mov [ebx + esi], dl
+	dec edx
+
+.done:
 	pop edi
 	pop esi
     ret
