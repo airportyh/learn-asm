@@ -3,7 +3,7 @@
 ; 	eax - the integer to be converted
 ; 	ebx - the buffer to use to hold the resulting digits
 ; outputs (gets you partially ready to call sys_write):
-; 	ecx - the address of the beginning of the string representation of the number
+; 	ecx - the address of the beginning of the string buffer containing the digits
 ;   edx - the number of digits in the resulting string representation
 ; requires itoa_buffer: resb 255 to be declared in .bss section
 itoa:
