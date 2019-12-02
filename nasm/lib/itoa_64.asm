@@ -3,18 +3,18 @@
 ; 	rax - the integer to be converted
 ; 	rbx - the buffer to use to hold the resulting digits
 ; outputs (gets you partially ready to call sys_write):
-; 	rcx - the address of the beginning of the string buffer containing the digits
+; 	rsi - the address of the beginning of the string buffer containing the digits
 ;   rdx - the number of digits in the resulting string representation
 itoa:
-	push rsi
+	push rcx
 	push rdi
 	cmp rax, 0
 	jl .negative
 	jmp .positive
 .negative:
 	mov rdx, 0
-	mov rsi, -1
-	imul rsi
+	mov rcx, -1
+	imul rcx
 	push -1
 	jmp .begin
 .positive:
@@ -23,7 +23,7 @@ itoa:
 .begin:
     ; strategy - we are going to fill in the digits from
     ; the end of the buffer and then move backwards
-	mov rsi, 254
+	mov rcx, 254
 .divide_loop:
 	; zero out edx for division because it in the upper byte of the quotient
 	; (idiv uses the combination of edx and eax as the quotient)
@@ -37,15 +37,15 @@ itoa:
 	; representation of the digit (48 is the ascii code for the
 	; character '0')
 	add rdx, 48
-	mov [rbx + rsi], dl
+	mov [rbx + rcx], dl
 
-    dec rsi
+    dec rcx
 	; if quotient is not zero, go to top of loop and do it again
     cmp rax, 0
 	jne .divide_loop
-    lea rcx, [rbx + rsi]
+    lea rsi, [rbx + rcx]
     mov rdx, 255
-    sub rdx, rsi
+    sub rdx, rcx
 
 	pop rdi ; check for negative sign
 	cmp rdi, -1
@@ -54,10 +54,10 @@ itoa:
 
 .apply_negative_sign:
 	mov dl, 45
-	mov [rbx + rsi], dl
+	mov [rbx + rcx], dl
 	dec rdx
 
 .done:
 	pop rdi
-	pop rsi
+	pop rcx
     ret

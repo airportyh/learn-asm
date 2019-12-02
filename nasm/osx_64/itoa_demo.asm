@@ -9,11 +9,9 @@ atoi_buffer: resb 255
 SECTION .text
 global start
 start:
-    mov rax, 123
+    mov rax, -12345
     mov rbx, itoa_buffer
 
     call itoa
-
-    mov rsi, rcx
     call print
     call exit
