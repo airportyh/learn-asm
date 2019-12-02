@@ -1,9 +1,9 @@
-%include './lib/exit.asm'
-%include './lib/atoi.asm'
-%include './lib/itoa.asm'
-%include './lib/print.asm'
-%include './lib/print_char.asm'
-%include './lib/input.asm'
+%include '../lib/exit_linux.asm'
+%include '../lib/atoi.asm'
+%include '../lib/itoa.asm'
+%include '../lib/print_linux.asm'
+%include '../lib/print_char.asm'
+%include '../lib/input_linux.asm'
 
 SECTION .data
 message db 'Number is: '

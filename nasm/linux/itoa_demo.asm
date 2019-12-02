@@ -1,6 +1,6 @@
-%include './lib/itoa.asm'
-%include './lib/exit.asm'
-%include './lib/print.asm'
+%include '../lib/itoa.asm'
+%include '../lib/exit_linux.asm'
+%include '../lib/print_linux.asm'
 
 SECTION .bss
 itoa_buffer: resb 255

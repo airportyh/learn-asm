@@ -1,7 +1,7 @@
-%include '../lib/exit_osx.asm'
-%include '../lib/print_osx.asm'
+%include '../lib/exit_osx_32.asm'
+%include '../lib/print_osx_32.asm'
 %include '../lib/print_char.asm'
-%include '../lib/input_osx.asm'
+%include '../lib/input_osx_32.asm'
 %include '../lib/itoa.asm'
 %include '../lib/atoi.asm'
 

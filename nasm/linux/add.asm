@@ -1,9 +1,9 @@
-%include './lib/exit.asm'
-%include './lib/atoi.asm'
-%include './lib/itoa.asm'
-%include './lib/print.asm'
-%include './lib/print_char.asm'
-%include './lib/input.asm'
+%include '../lib/exit_linux.asm'
+%include '../lib/atoi.asm'
+%include '../lib/itoa.asm'
+%include '../lib/print_linux.asm'
+%include '../lib/print_char.asm'
+%include '../lib/input_linux.asm'
 
 SECTION .data
 ask_number_1 db 'Enter a number: '
@@ -45,10 +45,10 @@ _start:
 
     mov ebx, itoa_buffer
     call itoa
-    
+
     push ecx
     push edx
-    
+
     mov ecx, answer
     mov edx, 11
     call print
