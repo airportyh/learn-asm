@@ -1,20 +1,20 @@
 ; itoa
 ; inputs:
-; 	eax - the integer to be converted
-; 	ebx - the buffer to use to hold the resulting digits
+; 	rax - the integer to be converted
+; 	rbx - the buffer to use to hold the resulting digits
 ; outputs (gets you partially ready to call sys_write):
-; 	ecx - the address of the beginning of the string buffer containing the digits
-;   edx - the number of digits in the resulting string representation
+; 	rcx - the address of the beginning of the string buffer containing the digits
+;   rdx - the number of digits in the resulting string representation
 itoa:
-	push esi
-	push edi
-	cmp eax, 0
+	push rsi
+	push rdi
+	cmp rax, 0
 	jl .negative
 	jmp .positive
 .negative:
-	mov edx, 0
-	mov esi, -1
-	imul esi
+	mov rdx, 0
+	mov rsi, -1
+	imul rsi
 	push -1
 	jmp .begin
 .positive:
@@ -23,41 +23,41 @@ itoa:
 .begin:
     ; strategy - we are going to fill in the digits from
     ; the end of the buffer and then move backwards
-	mov esi, 254
+	mov rsi, 254
 .divide_loop:
 	; zero out edx for division because it in the upper byte of the quotient
 	; (idiv uses the combination of edx and eax as the quotient)
-	mov edx, 0
+	mov rdx, 0
 	; divide edx:eax by 10, the resulting quotient will be in eax, and the remainder
 	; in edx
-	mov edi, 10
-	idiv edi
+	mov rdi, 10
+	idiv rdi
 
 	; add 48 to the value of the digit to convert it into the ascii
 	; representation of the digit (48 is the ascii code for the
 	; character '0')
-	add edx, 48
-	mov [ebx + esi], dl
+	add rdx, 48
+	mov [rbx + rsi], dl
 
-    dec esi
+    dec rsi
 	; if quotient is not zero, go to top of loop and do it again
-    cmp eax, 0
+    cmp rax, 0
 	jne .divide_loop
-    lea ecx, [ebx + esi]
-    mov edx, 255
-    sub edx, esi
+    lea rcx, [rbx + rsi]
+    mov rdx, 255
+    sub rdx, rsi
 
-	pop edi ; check for negative sign
-	cmp edi, -1
+	pop rdi ; check for negative sign
+	cmp rdi, -1
 	je .apply_negative_sign
 	jmp .done
 
 .apply_negative_sign:
 	mov dl, 45
-	mov [ebx + esi], dl
-	dec edx
+	mov [rbx + rsi], dl
+	dec rdx
 
 .done:
-	pop edi
-	pop esi
+	pop rdi
+	pop rsi
     ret

@@ -62,7 +62,7 @@ accumulate_loop:
 	cmp bl, 0
 	je accumulate_loop_end
 
-	; multiple the contents of eax by 10 (imul always uses eax)
+	; multiply the contents of eax by 10 (imul always uses eax)
 	mov edx, 10
 	imul edx
 

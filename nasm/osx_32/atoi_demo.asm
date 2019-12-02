@@ -1,9 +1,9 @@
-%include '../lib/exit_linux.asm'
+%include '../lib/exit_osx.asm'
 %include '../lib/atoi.asm'
 %include '../lib/itoa.asm'
-%include '../lib/print_linux.asm'
+%include '../lib/print_osx.asm'
 %include '../lib/print_char.asm'
-%include '../lib/input_linux.asm'
+%include '../lib/input_osx.asm'
 
 SECTION .data
 ask_number db 'Enter a number: '
@@ -17,8 +17,8 @@ atoi_buffer: resb 255
 itoa_buffer: resb 255
 
 SECTION .text
-global _start
-_start:
+global start
+start:
 	mov ecx, ask_number
 	mov edx, ask_number.len
 	call print

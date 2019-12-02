@@ -1,7 +1,7 @@
-%include '../lib/exit_linux.asm'
-%include '../lib/print_linux.asm'
+%include '../lib/exit_osx.asm'
+%include '../lib/print_osx.asm'
 %include '../lib/print_char.asm'
-%include '../lib/input_linux.asm'
+%include '../lib/input_osx.asm'
 %include '../lib/itoa.asm'
 %include '../lib/atoi.asm'
 
@@ -13,8 +13,8 @@ scratch_buffer: resb 255
 current_number: resb 1
 
 SECTION .text
-global _start
-_start:
+global start
+start:
     mov dword [current_number], 0
 
 repl:

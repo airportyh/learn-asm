@@ -6,12 +6,14 @@
 ;   none
 print:
     push eax
-    push edx
-    
-    mov eax, 4
-	mov ebx, 1
-	int 80h
 
-    pop edx
+    push edx
+    push ecx
+    push 1
+    mov eax, 4
+    sub esp, 4
+    int	80h
+    add esp, 16
+
     pop eax
     ret
