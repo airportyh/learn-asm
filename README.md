@@ -5,6 +5,9 @@ programming. I have tried both [gas](https://en.wikibooks.org/wiki/X86_Assembly/
 
 ## Resources
 
+* https://gist.github.com/FiloSottile/7125822
+* http://www.int80h.org/bsdasm/
+* https://en.wikipedia.org/wiki/X86_calling_conventions
 * https://github.com/0xAX/asm
 * https://www.cs.uaf.edu/2017/fall/cs301/reference/x86_64.html
 * https://www.csee.umbc.edu/portal/help/nasm/sample.shtml
@@ -15,15 +18,20 @@ programming. I have tried both [gas](https://en.wikibooks.org/wiki/X86_Assembly/
 
 ## Todos
 
-* write some slightly more complex programs
-* learn how to do these in 64-bit osx so I don't have to use Docker
-* figure out how to use debugger
+* port some programs to osx 32
+* port some programs to osx 64
+* translate a gas program compiled from C to nasm
+* translate a nasm program to gas
+* maybe learn to use the stack to pass values to functions
+* try writing asm on windows and using their debugger (Handmade Hero tutorial)
 * use malloc to simulate arrays, strings, and structs
-* learn to use lea
 * digging into binary opcode format to understand things at a lower level
-* maybe learn to use the stack pointer to look upwards in the stack
 * learn writing asm for the Arduino
 * connect what I learned in nasm back in gas syntax
+* learn how to do these in 64-bit osx so I don't have to use Docker (done)
+* learn to use lea (partially done)
+* figure out how to use debugger (gave up)
+* write some slightly more complex programs (done)
 * extract a set of useful library functions: (atoi(x), itoa(x), reverse_string)
 * write into a string buffer (done)
 * reverse the string (done)
@@ -32,14 +40,18 @@ programming. I have tried both [gas](https://en.wikibooks.org/wiki/X86_Assembly/
 
 ## Ideas for Programs
 
-* calculator / tally program
 * reverse guess a number game
 * word count (wc) program
 * guess a number game
 * possible to have the guess a number game vs a reverse guess a number game?
 * word summary program
 * fizzbuzz
+* calculator / tally program (calc.asm)
 
 ## Videos
 
 I made a [couple of videos](https://www.youtube.com/playlist?list=PLSq9OFrD2Q3DCb7dxmvVudikqDeQW8tNL) on this topic.
+
+## Questions
+
+What is syscall?

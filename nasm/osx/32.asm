@@ -2,22 +2,21 @@
 
 global start
 
-section .text
-start:
-    push    dword msg.len
-    push    dword msg
-    push    dword 1
-    mov     eax, 4
-    sub     esp, 4
-    int     0x80
-    add     esp, 16
-
-    push    dword 0
-    mov     eax, 1
-    sub     esp, 12
-    int     0x80
-
 section .data
-
 msg:    db      "Hello, world!", 10
 .len:   equ     $ - msg
+
+section .text
+start:
+    push    msg.len
+    push    msg
+    push    1
+    mov     eax, 4
+    sub     esp, 4
+    int     80h
+    add     esp, 16
+
+    push    0
+    mov     eax, 1
+    sub     esp, 12
+    int     80h
