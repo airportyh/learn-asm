@@ -19,18 +19,19 @@ programming. I have tried both [gas](https://en.wikibooks.org/wiki/X86_Assembly/
 ## Todos
 
 * translate a gas program compiled from C to nasm
-* convert itoa to 64
-* write strlen function
-* translate a nasm program to gas
 * learn to use gdb on gas code
+* translate a nasm program to gas
+* write strlen function
 * learn macros
 * learn to use the stack to pass values to functions
+* understand C interop
 * what is rel (as explained [here](https://stackoverflow.com/questions/13091987/x64-nasm-pushing-memory-addresses-onto-the-stack-call-function))?
 * try writing asm on windows and using their debugger (Handmade Hero tutorial)
 * use malloc to simulate arrays, strings, and structs
 * digging into binary opcode format to understand things at a lower level
 * learn writing asm for the Arduino
 * connect what I learned in nasm back in gas syntax
+* convert itoa to 64 (done)
 * port some programs to osx 64 (done)
 * port some programs to osx 32 (done)
 * learn how to do these in 64-bit osx so I don't have to use Docker (done)
