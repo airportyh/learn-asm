@@ -1,0 +1,2 @@
+nasm -fmacho64 maxofthree.asm
+gcc callmaxofthree.c maxofthree.o -o maxofthree.bin

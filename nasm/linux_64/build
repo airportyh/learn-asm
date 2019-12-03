@@ -1,0 +1,2 @@
+nasm -f elf64 $1
+gcc ${1%.asm}.o -o ${1%.asm}.bin 
